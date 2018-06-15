@@ -1,4 +1,5 @@
 // Setup basic express server
+const { addMessage, getValue, getLength } = require('./src/queue')
 const consola = require('consola')
 const express = require('express')
 const app = express()
@@ -14,6 +15,10 @@ var numUsers = 0
 
 io.on('connection', (socket) => {
   let addedUser = false
+  socket.on('fetchHistory', () => {
+    socket.emit('getHistoryMessage', getValue())
+    consola.info(`${socket.username} wants to fetch history messages, the queue length is ${getLength()}`)
+  })
   socket.on('newMessage', (data) => {
     // we tell the client to execute 'new message'
     socket.broadcast.emit('newMessage', {
@@ -21,6 +26,7 @@ io.on('connection', (socket) => {
       content: data.content,
       email: socket.email
     })
+    addMessage(data)
     consola.info(`${data.username} said: ${data.content}`)
   })
 
