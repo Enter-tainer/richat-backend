@@ -1,0 +1,35 @@
+{
+  "name": "richat-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "consola": "^1.4.1",
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.0.1",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github/Enter-tainer/richat-backend"
+  },
+  "keywords": [
+    "chat",
+    "markdown",
+    "latex"
+  ],
+  "author": "Margatroid",
+  "license": "MIT"
+}
