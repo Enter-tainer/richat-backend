@@ -21,11 +21,7 @@ io.on('connection', (socket) => {
   })
   socket.on('newMessage', (data) => {
     // we tell the client to execute 'new message'
-    socket.broadcast.emit('newMessage', {
-      username: data.username,
-      content: data.content,
-      email: socket.email
-    })
+    socket.broadcast.emit('newMessage', data)
     addMessage(data)
     consola.info(`${data.username} said: ${data.content}`)
   })
