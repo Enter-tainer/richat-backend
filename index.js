@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 443
 
 server.listen(port, () => {
   consola.start(`Server started at port ${port}`)
